@@ -7,7 +7,7 @@
   flex-direction: row;
   background-size: cover;
   justify-content: center;
-  background-image: url("https://play.teleporthq.io/static/svg/placeholders/no-image.svg");
+  background-image: url('https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/background.webp');
   background-position: top;
 }
 .home-container1 {
@@ -60,9 +60,4 @@
   width: 150px;
   object-fit: cover;
   padding-top: var(--dl-space-space-threeunits);
-}
-@media(max-width: 1200px) {
-  .home-container {
-    background-image: url('https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/background.webp');
-  }
 }
