@@ -130,7 +130,7 @@
       gameIcon.alt = 'game';
       gameIcon.src = iconURL;
       gameIcon.className = 'home-game1';
-      gameIcon.onclick = function() { showHidden(id); };
+      gameIcon.onclick = function () { showHidden(id); };
 
       var gameListMain = document.querySelector('.home-gamelist');
 
@@ -164,8 +164,15 @@
 
 
     document.addEventListener("DOMContentLoaded", function () {
-      // Your JavaScript code here
-      createGame("https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameTemplate.gif", 1, "CATCHING THE STARS", "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/catch.gif", "Help the Ninja gather up all the Ninja Stars! Follow this tutorial to not only play the game, but learn how to make it yourself!", "https://forms.codeninjas.com/gamebuilding/button/fdcfb78226a1207229ff15e5255102fda9548b35?lightbox=e1a17fc0-23e3-11ed-8b92-72d27aa60b37");
+
+      createGame(
+        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameTemplate.gif",
+        1,
+        "CATCHING THE STARS",
+        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/catch.gif",
+        "Help the Ninja gather up all the Ninja Stars! Follow this tutorial to not only play the game, but learn how to make it yourself!",
+        "https://forms.codeninjas.com/gamebuilding/button/fdcfb78226a1207229ff15e5255102fda9548b35?lightbox=e1a17fc0-23e3-11ed-8b92-72d27aa60b37"
+      );
     });
 
   </script>
