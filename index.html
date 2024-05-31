@@ -1,252 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Game Building</title>
-    <meta property="og:title" content="Game Building" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="utf-8" />
-    <meta property="twitter:card" content="summary_large_image" />
 
-    <style data-tag="reset-style-sheet">
-      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
-    </style>
-    <style data-tag="default-style-sheet">
-      html {
-        font-family: Inter;
-        font-size: 16px;
-      }
+<head>
+  <title>Game Building</title>
+  <meta property="og:title" content="Game Building" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="twitter:card" content="summary_large_image" />
 
-      body {
-        font-weight: 400;
-        font-style:normal;
-        text-decoration: none;
-        text-transform: none;
-        letter-spacing: normal;
-        line-height: 1.15;
-        color: var(--dl-color-gray-black);
-        background-color: var(--dl-color-gray-white);
-      }
+  <style data-tag="reset-style-sheet">
+    html {
+      line-height: 1.15;
+    }
 
-    </style>
-    <script>
-        function showHidden(num) {
-          document.getElementById("gameWindow" + num).style.display = "flex";
-        }
-        function hide(num) {
-          document.getElementById("gameWindow" + num).style.display = "none";
-        }
-    </script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/animate.css@4.1.1/animate.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
-      data-tag="font"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
-    />
-  </head>
-  <body>
-    <link rel="stylesheet" href="./style.css" />
-    <div>
-      <link href="./index.css" rel="stylesheet" />
+    body {
+      margin: 0;
+    }
 
-      <div class="home-container">
-        <div class="home-main-page">
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/cabinet.webp"
-            class="home-background-image"
-          />
-          <div class="home-screen-content">
-            <img
-              alt="image"
-              src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/title.gif"
-              class="home-logo"
-            />
-            <img
-              alt="image"
-              src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/choose.gif"
-              class="home-tagline"
-            />
-            <div class="home-gamelist">
-              <img
-                alt="image"
-                src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameTemplate.gif"
-                class="home-game1"
-                onclick="showHidden(1)"
-              />
-              <img
-                alt="image"
-                src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameTemplate.gif"
-                class="home-game1"
-                onclick="showHidden(2)" 
-              />
-              <img
-                alt="image"
-                src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/catch-game.gif"
-                class="home-game1"
-                onclick="showHidden(3)"
-              />
-            </div>
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    figcaption {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
+  <style data-tag="default-style-sheet">
+    html {
+      font-family: Inter;
+      font-size: 16px;
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.15;
+      color: var(--dl-color-gray-black);
+      background-color: var(--dl-color-gray-white);
+    }
+  </style>
+  <script>
+    function showHidden(num) {
+      document.getElementById("gameWindow" + num).style.display = "flex";
+    }
+    function hide(num) {
+      document.getElementById("gameWindow" + num).style.display = "none";
+    }
+
+    function createGame(iconURL, id, title, exampleGifUrl, text, projectLinkUrl) {
+      var gameIcon = document.createElement('img');
+      gameIcon.alt = 'game';
+      gameIcon.src = iconURL;
+      gameIcon.className = 'home-game1';
+      gameIcon.onclick = function() { showHidden(id); };
+
+      var gameListMain = document.querySelector('.home-gamelist');
+
+      // Append the section to the home-main-page div
+      gameListMain.appendChild(gameIcon);
+
+      // Create a new section element
+      var section = document.createElement('section');
+      section.className = 'home-game-w-indow';
+      section.id = 'gameWindow' + id;
+      section.style = 'display: none'
+
+      // Create the inner HTML for the section
+      section.innerHTML = `
+          <span class="home-title">${title}</span>
+          <img alt="Close" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/icon.svg" class="home-close" onclick="hide(${id})"/>
+          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif" class="home-leaves1"/>
+          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif" class="home-leaves2"/>
+          <img alt="image" src=${exampleGifUrl} class="home-example-image"/>
+          <span class="home-text"><span>${text}</span><br /></span>
+          <a href=${projectLinkUrl} target="_blank" rel="noreferrer noopener" class="home-start button"> Start Project </a>
+          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/BG.png" class="home-game-window-image"/>
+         `;
+
+      // Get the home-main-page div
+      var homeMainPage = document.querySelector('.home-main-page');
+
+      // Append the section to the home-main-page div
+      homeMainPage.appendChild(section);
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Your JavaScript code here
+      createGame("https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameTemplate.gif", 1, "CATCHING THE STARS", "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/catch.gif", "Help the Ninja gather up all the Ninja Stars! Follow this tutorial to not only play the game, but learn how to make it yourself!", "https://forms.codeninjas.com/gamebuilding/button/fdcfb78226a1207229ff15e5255102fda9548b35?lightbox=e1a17fc0-23e3-11ed-8b92-72d27aa60b37");
+    });
+
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@4.1.1/animate.css" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet" href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css" />
+</head>
+
+<body>
+  <link rel="stylesheet" href="./style.css" />
+  <div>
+    <link href="./index.css" rel="stylesheet" />
+
+    <div class="home-container">
+      <div class="home-main-page">
+        <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/cabinet.webp"
+          class="home-background-image" />
+        <div class="home-screen-content">
+          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/title.gif"
+            class="home-logo" />
+          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/choose.gif"
+            class="home-tagline" />
+          <div class="home-gamelist">
           </div>
-          <a
-            href="https://www.codeninjas.com/ca-studio-city"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="home-link"
-          >
-            <img
-              alt="image"
-              src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/logo.avif"
-              class="home-image"
-            />
-          </a>
         </div>
-        <section class="home-game-w-indow" id="gameWindow1" style="display: none;">
-          <span class="home-title">Game Title</span>
-          <img
-            alt="Close"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/icon.svg"
-            class="home-close"
-            onclick="hide(1)"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif"
-            class="home-leaves1"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif"
-            class="home-leaves2"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameExample.gif"
-            class="home-example-image"
-          />
-          <span class="home-text">
-            <span>
-              This is placeholder text, the quick description of the game will
-              go here. I'm going to keep typing so you can see what two lines
-              looks like
-            </span>
-            <br />
-          </span>
-          <a
-            href="https://github.com/NickCNStudioCity/CNSCGBS"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="home-start button"
-          >
-            Start Project
-          </a>
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/BG.png"
-            class="home-game-window-image"
-          />
-        </section>
-        <section class="home-game-w-indow" id="gameWindow2" style="display: none;">
-          <span class="home-title">BECOME A NINJA</span>
-          <img
-            alt="Close"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/icon.svg"
-            class="home-close"
-            onclick="hide(2)"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif"
-            class="home-leaves1"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif"
-            class="home-leaves2"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameExample.gif"
-            class="home-example-image"
-          />
-          <span class="home-text">
-            <span>
-              Become a Ninja! Follow this tutorial to not only play the game, 
-              but learn how to make it yourself!
-            </span>
-            <br />
-          </span>
-          <a
-            href="https://forms.codeninjas.com/gamebuilding/button/NgJiQ8aFUzOpaaVIR2WffNob7iaErqsi?lightbox=3519f1b3-2159-4fd0-83bb-97fd3d1c5a1e"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="home-start button"
-          >
-            Start Project
-          </a>
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/BG.png"
-            class="home-game-window-image"
-          />
-        </section>
-        <section class="home-game-w-indow" id="gameWindow3" style="display: none;">
-          <span class="home-title">CATCHING THE STARS</span>
-          <img
-            alt="Close"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/icon.svg"
-            class="home-close"
-            onclick="hide(3)"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif"
-            class="home-leaves1"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif"
-            class="home-leaves2"
-          />
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/catch.gif"
-            class="home-example-image"
-          />
-          <span class="home-text">
-            <span>
-            Help the Ninja gather up all the Ninja Stars!
-            Follow this tutorial to not only play the game, 
-            but learn how to make it yourself!
-            </span>
-            <br />
-          </span>
-          <a
-            href="https://forms.codeninjas.com/gamebuilding/button/fdcfb78226a1207229ff15e5255102fda9548b35?lightbox=e1a17fc0-23e3-11ed-8b92-72d27aa60b37"
-            target="_blank"
-            rel="noreferrer noopener"
-            class="home-start button"
-          >
-            Start Catching
-          </a>
-          <img
-            alt="image"
-            src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/BG.png"
-            class="home-game-window-image"
-          />
-        </section>
+        <a href="https://www.codeninjas.com/ca-studio-city" target="_blank" rel="noreferrer noopener" class="home-link">
+          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/logo.avif"
+            class="home-image" />
+        </a>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

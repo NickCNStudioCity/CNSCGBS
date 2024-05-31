@@ -120,7 +120,7 @@
 }
 .home-close {
   top: 12px;
-  left: 945px;
+  right: 18%; /* Adjusted to move the close button to the top right corner */
   width: 70px;
   position: absolute;
   object-fit: cover;
