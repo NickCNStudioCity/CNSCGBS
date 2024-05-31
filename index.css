@@ -8,6 +8,7 @@
   background-size: cover;
   justify-content: center;
   background-image: url('https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/background.png');
+  background-size: auto;
   background-position: top;
 }
 
@@ -20,61 +21,57 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.home-background-image {
-  width: 100%;
-  object-fit: cover;
-}
+
 .home-screen-content {
+  position: fixed;
+  width: 100%;
+  height: 100%;
   top: 140px;
-  flex: 0 0 auto;
-  left: 0px;
-  right: 0px;
-  margin: auto;
-  display: flex;
-  position: absolute;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
+  left: 0;
 }
+
 .home-logo {
-  width: 550px;
+  max-width: 550px; /* Fixed width */
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  position: relative; /* Ensure positioning relative to parent */
+  left: 50%;
+  transform: translateX(-50%);
 }
+
 .home-tagline {
-  top: 55px;
-  left: 0px;
-  right: 0px;
-  width: 340px;
-  margin: auto;
+  width: 340px; /* Fixed width */
+  height: auto;
   position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  margin: auto;
   object-fit: cover;
 }
 .home-gamelist {
-  flex: 0 0 auto;
-  width: auto;
   display: flex;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  justify-content: center; /* Center items horizontally */
+  max-width: 800px; /* Set a maximum width for the container */
+  margin: 0 auto; /* Center the container */
 }
-.home-game1 {
-  width: 150px;
+
+.home-gamelist > * {
+  flex: 0 0 calc(20% - 10px); /* 20% width for each item with some spacing */
+  margin: 5px; /* Adjust spacing between items */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.home-gamelist .home-game {
+  width: 100px !important; /* Increase specificity and use !important to override other rules */
   object-fit: cover;
   padding-top: var(--dl-space-space-threeunits);
 }
-.home-game11 {
-  width: 150px;
-  object-fit: cover;
-  padding-top: var(--dl-space-space-threeunits);
-}
-.home-game12 {
-  width: 150px;
-  object-fit: cover;
-  padding-top: var(--dl-space-space-threeunits);
-}
-.home-game1:hover,
-.home-game11:hover,
-.home-game12:hover {
+
+.home-game:hover {
   cursor: pointer;
 }
 .home-link {
@@ -91,14 +88,7 @@
   text-decoration: none;
 }
 .home-game-w-indow {
-  top: 0px;
-  left: 0px;
-  right: 0px;
   width: 100%;
-  height: 150vh;
-  margin: auto;
-  display: flex;
-  position: absolute;
   align-self: flex-start;
   align-items: center;
   flex-direction: column;
@@ -119,16 +109,22 @@
   font-weight: 900;
 }
 .home-close {
-  top: 12px;
-  right: 18%; /* Adjusted to move the close button to the top right corner */
-  width: 70px;
+  top: 5px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   object-fit: cover;
+  z-index: 9999;
 }
 .home-close:hover {
   opacity: 0.5;
   cursor: pointer;
 }
+.popUpBox {
+  position: relative;
+}
+
 .home-leaves1 {
   top: 200px;
   left: 200px;
@@ -146,7 +142,7 @@
   object-fit: cover;
 }
 .home-example-image {
-  top: 120px;
+  top: 100px;
   left: 0px;
   right: 0px;
   width: 360px;
@@ -156,11 +152,11 @@
   border-radius: 20px;
 }
 .home-text {
-  top: 425px;
+  top: 400px;
   left: 0px;
   color: rgb(255, 255, 255);
   right: 0px;
-  width: 800px;
+  width: 730px;
   margin: auto;
   padding: var(--dl-space-space-oneandhalfunits);
   position: absolute;
@@ -171,7 +167,7 @@
   background-color: rgba(6, 6, 39, 0.59);
 }
 .home-start {
-  top: 530px;
+  top: 500px;
   left: 500px;
   color: rgb(255, 255, 255);
   right: 500px;
@@ -193,7 +189,7 @@
   background-color: #008064;
 }
 .home-game-window-image {
-  width: 800px;
+  width: 730px;
   height: auto;
   opacity: 1;
   object-fit: cover;

@@ -131,7 +131,7 @@
       var gameIcon = document.createElement('img');
       gameIcon.alt = 'game';
       gameIcon.src = imgPath + "icons/" + gameImg;
-      gameIcon.className = 'home-game1';
+      gameIcon.className = 'home-game';
       gameIcon.onclick = function () { showHidden(id); };
 
       var gameListMain = document.querySelector('.home-gamelist');
@@ -149,19 +149,19 @@
 
       // Create the inner HTML for the section
       section.innerHTML = `
+          <div class="popUpBox"><img alt="image" src=${imgPath + "BG.png"} class="home-game-window-image"/>
+          <img alt="Close" src=${imgPath + "icon.svg"} class="home-close" onclick="hide(${id})"/></div>
           <span class="home-title">${title}</span>
-          <img alt="Close" src=${imgPath + "icon.svg"} class="home-close" onclick="hide(${id})"/>
           <img alt="image" src=${imgPath + "leavesGif.gif"} class="home-leaves1"/>
           <img alt="image" src=${imgPath + "leavesGif.gif"} class="home-leaves2"/>
           <img alt="image" src=${gameImg} class="home-example-image"/>
           <span class="home-text"><span>${text}</span><br /></span>
           <a href=${projectLinkUrl} target="_blank" rel="noreferrer noopener" class="home-start button"> Start Project </a>
-          <img alt="image" src=${imgPath + "BG.png"} class="home-game-window-image"/>
+
          `;
 
       // Get the home-main-page div
       var homeMainPage = document.querySelector('.home-main-page');
-
       // Append the section to the home-main-page div
       homeMainPage.appendChild(section);
     }
@@ -225,6 +225,18 @@
           // Project URL
           "https://forms.codeninjas.com/gamebuilding/button/e4b622189105bcea47f452b2e164c108001a9eb8?lightbox=c1198602-1d34-11ef-b45e-1683c2a2ca8b&_session=a7d2ea88-adaf-4e06-b130-c209244fb424"
       );
+      createGame(
+          // Game Image
+          "riddle.gif",
+          // Game ID
+          5,
+          // Game Title
+          "NINJA RIDDLE QUEST",
+          // Description
+          "Get clues from Code Senseis and solve those riddles! Learn how to create your own guessing game!",
+          // Project URL
+          "https://forms.codeninjas.com/gamebuilding/button/e4b622189105bcea47f452b2e164c108001a9eb8?lightbox=c1198602-1d34-11ef-b45e-1683c2a2ca8b&_session=a7d2ea88-adaf-4e06-b130-c209244fb424"
+      );
     });
 
   </script>
@@ -245,8 +257,6 @@
 
     <div class="home-container">
       <div class="home-main-page">
-        <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/cabinet.webp"
-          class="home-background-image" />
         <div class="home-screen-content">
           <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/title.gif"
             class="home-logo" />
@@ -255,10 +265,13 @@
           <div class="home-gamelist">
           </div>
         </div>
+        <!--
         <a href="https://www.codeninjas.com/ca-studio-city" target="_blank" rel="noreferrer noopener" class="home-link">
           <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/logo.avif"
             class="home-image" />
+            
         </a>
+        -->
       </div>
     </div>
   </div>
