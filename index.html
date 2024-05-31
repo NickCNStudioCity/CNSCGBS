@@ -125,12 +125,12 @@
       document.getElementById("gameWindow" + num).style.display = "none";
     }
 
-    function createGame(iconImg, id, title, previewImg, text, projectLinkUrl) {
+    function createGame(gameImg, id, title, text, projectLinkUrl) {
       var imgPath = "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/";
 
       var gameIcon = document.createElement('img');
       gameIcon.alt = 'game';
-      gameIcon.src = imgPath + "icons/" + iconImg;
+      gameIcon.src = imgPath + "icons/" + gameImg;
       gameIcon.className = 'home-game1';
       gameIcon.onclick = function () { showHidden(id); };
 
@@ -145,18 +145,18 @@
       section.id = 'gameWindow' + id;
       section.style = 'display: none'
 
-      previewImg = imgPath + "previews/" + previewImg;
+      gameImg = imgPath + "previews/" + gameImg;
 
       // Create the inner HTML for the section
       section.innerHTML = `
           <span class="home-title">${title}</span>
-          <img alt="Close" src=${imgSrc+"icon.svg"} class="home-close" onclick="hide(${id})"/>
-          <img alt="image" src=${imgSrc+"leavesGif.gif"} class="home-leaves1"/>
-          <img alt="image" src=${imgSrc+"leavesGif.gif"} class="home-leaves2"/>
-          <img alt="image" src=${previewImg} class="home-example-image"/>
+          <img alt="Close" src=${imgPath + "icon.svg"} class="home-close" onclick="hide(${id})"/>
+          <img alt="image" src=${imgPath + "leavesGif.gif"} class="home-leaves1"/>
+          <img alt="image" src=${imgPath + "leavesGif.gif"} class="home-leaves2"/>
+          <img alt="image" src=${gameImg} class="home-example-image"/>
           <span class="home-text"><span>${text}</span><br /></span>
           <a href=${projectLinkUrl} target="_blank" rel="noreferrer noopener" class="home-start button"> Start Project </a>
-          <img alt="image" src=${imgSrc+"BG.png"} class="home-game-window-image"/>
+          <img alt="image" src=${imgPath + "BG.png"} class="home-game-window-image"/>
          `;
 
       // Get the home-main-page div
@@ -169,13 +169,61 @@
 
     document.addEventListener("DOMContentLoaded", function () {
 
+      /*
       createGame(
-        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/",
-        1,
-        "CATCHING THE STARS",
-        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/",
-        "Help the Ninja gather up all the Ninja Stars! Follow this tutorial to not only play the game, but learn how to make it yourself!",
-        "https://forms.codeninjas.com/gamebuilding/button/fdcfb78226a1207229ff15e5255102fda9548b35?lightbox=e1a17fc0-23e3-11ed-8b92-72d27aa60b37"
+          // Game Image
+          ".gif",
+          // Game ID
+          0,
+          // Game Title
+          "",
+          // Description
+          "",
+          // Project URL
+          ""
+      );
+      */
+
+      createGame(
+        /* Game Image  */ "stars.gif",
+        /* Game ID     */ 1,
+        /* Game Title  */ "CATCHING THE STARS",
+        /* Description */ "Help the Ninja gather up all the Ninja Stars! Follow this tutorial to not only play the game, but learn how to make it yourself!",
+        /* Project URL */ "https://forms.codeninjas.com/gamebuilding/button/fdcfb78226a1207229ff15e5255102fda9548b35?lightbox=e1a17fc0-23e3-11ed-8b92-72d27aa60b37"
+      );
+      createGame(
+        /* Game Image  */ "hiding.gif",
+        /* Game ID     */ 2,
+        /* Game Title  */ "HIDING NINJA",
+        /* Description */ "It's up to you to find the pesky hiding Ninja! Learn how to make a game about hiding elements!",
+        /* Project URL */ "https://forms.codeninjas.com/gamebuilding/button/af6dfd28121590ee9a401fb2e8ac9e4e7f107895?lightbox=7e648d96-194e-11ef-bc18-1aeeae431fc7&_session=a7d2ea88-adaf-4e06-b130-c209244fb424"
+      );
+      createGame(
+        /* Game Image  */ "invaders.gif",
+        /* Game ID     */ 3,
+        /* Game Title  */ "NINJA INVADERS",
+        /* Description */ "With enemies falling from the sky, it's up to you to destroy them! Create your very own 'Invaders' style game!",
+        /* Project URL */ "https://forms.codeninjas.com/gamebuilding/button/T07aa4ecd2e77ff1a958dbf67734ccd4889b8136?lightbox=c19e70a4-194e-11ef-8a25-f2bc90623d83&_session=a7d2ea88-adaf-4e06-b130-c209244fb424"
+      );
+      createGame(
+        /* Game Image  */ "keeper.gif",
+        /* Game ID     */ 4,
+        /* Game Title  */ "NINJA KEEPER",
+        /* Description */ "Strike a goal! Use MakeCode to create your very own soccer themed game!",
+        /* Project URL */ "https://forms.codeninjas.com/gamebuilding/button/m640ffad226bb5fb02121dd0ea8c7b5ce4eed2f8?lightbox=3ba273aa-194f-11ef-a3d7-5639c04687ca&_session=a7d2ea88-adaf-4e06-b130-c209244fb424"
+      );
+
+      createGame(
+          // Game Image
+          "riddle.gif",
+          // Game ID
+          5,
+          // Game Title
+          "NINJA RIDDLE QUEST",
+          // Description
+          "Get clues from Code Senseis and solve those riddles! Learn how to create your own guessing game!",
+          // Project URL
+          "https://forms.codeninjas.com/gamebuilding/button/e4b622189105bcea47f452b2e164c108001a9eb8?lightbox=c1198602-1d34-11ef-b45e-1683c2a2ca8b&_session=a7d2ea88-adaf-4e06-b130-c209244fb424"
       );
     });
 
