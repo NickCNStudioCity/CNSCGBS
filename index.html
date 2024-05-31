@@ -125,10 +125,12 @@
       document.getElementById("gameWindow" + num).style.display = "none";
     }
 
-    function createGame(iconURL, id, title, exampleGifUrl, text, projectLinkUrl) {
+    function createGame(iconImg, id, title, previewImg, text, projectLinkUrl) {
+      var imgPath = "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/";
+
       var gameIcon = document.createElement('img');
       gameIcon.alt = 'game';
-      gameIcon.src = iconURL;
+      gameIcon.src = imgPath + "icons/" + iconImg;
       gameIcon.className = 'home-game1';
       gameIcon.onclick = function () { showHidden(id); };
 
@@ -143,16 +145,18 @@
       section.id = 'gameWindow' + id;
       section.style = 'display: none'
 
+      previewImg = imgPath + "previews/" + previewImg;
+
       // Create the inner HTML for the section
       section.innerHTML = `
           <span class="home-title">${title}</span>
-          <img alt="Close" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/icon.svg" class="home-close" onclick="hide(${id})"/>
-          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif" class="home-leaves1"/>
-          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/leavesGif.gif" class="home-leaves2"/>
-          <img alt="image" src=${exampleGifUrl} class="home-example-image"/>
+          <img alt="Close" src=${imgSrc+"icon.svg"} class="home-close" onclick="hide(${id})"/>
+          <img alt="image" src=${imgSrc+"leavesGif.gif"} class="home-leaves1"/>
+          <img alt="image" src=${imgSrc+"leavesGif.gif"} class="home-leaves2"/>
+          <img alt="image" src=${previewImg} class="home-example-image"/>
           <span class="home-text"><span>${text}</span><br /></span>
           <a href=${projectLinkUrl} target="_blank" rel="noreferrer noopener" class="home-start button"> Start Project </a>
-          <img alt="image" src="https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/BG.png" class="home-game-window-image"/>
+          <img alt="image" src=${imgSrc+"BG.png"} class="home-game-window-image"/>
          `;
 
       // Get the home-main-page div
@@ -166,10 +170,10 @@
     document.addEventListener("DOMContentLoaded", function () {
 
       createGame(
-        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/gameTemplate.gif",
+        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/",
         1,
         "CATCHING THE STARS",
-        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/catch.gif",
+        "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/",
         "Help the Ninja gather up all the Ninja Stars! Follow this tutorial to not only play the game, but learn how to make it yourself!",
         "https://forms.codeninjas.com/gamebuilding/button/fdcfb78226a1207229ff15e5255102fda9548b35?lightbox=e1a17fc0-23e3-11ed-8b92-72d27aa60b37"
       );
