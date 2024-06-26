@@ -126,21 +126,21 @@
     }
 
     function createGame(gameImg, id, title, text, projectLinkUrl) {
-      var imgPath = "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/";
+      let imgPath = "https://raw.githubusercontent.com/NickCNStudioCity/CNSCGBS/main/public/";
 
-      var gameIcon = document.createElement('img');
+      let gameIcon = document.createElement('img');
       gameIcon.alt = 'game';
       gameIcon.src = imgPath + "icons/" + gameImg;
       gameIcon.className = 'home-game';
       gameIcon.onclick = function () { showHidden(id); };
 
-      var gameListMain = document.querySelector('.home-gamelist');
+      let gameListMain = document.querySelector('.home-gamelist');
 
       // Append the section to the home-main-page div
       gameListMain.appendChild(gameIcon);
 
       // Create a new section element
-      var section = document.createElement('section');
+      let section = document.createElement('section');
       section.className = 'home-game-w-indow';
       section.id = 'gameWindow' + id;
       section.style = 'display: none'
@@ -161,7 +161,7 @@
          `;
 
       // Get the home-main-page div
-      var homeMainPage = document.querySelector('.home-main-page');
+      let homeMainPage = document.querySelector('.home-main-page');
       // Append the section to the home-main-page div
       homeMainPage.appendChild(section);
     }
